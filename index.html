@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet"
+          href="css/chartist.css">
+  </head>
+
+  <body>
+    
+<div class="Combobox">
+
+  <span>Selecciona el tipo de consola: </span>
+  <select name="console" id="console" onchange="chooseConsole();">
+    <option value="Xbox One">XBOX ONE</option>
+    <option value="Xbox Series X">XBOX SERIES X</option>
+    <option value="Playstation 5">PLAYSTATION 5</option>
+    <option value="Playstation 4">PLAYSTATION 4</option>
+    <option value="Pc">PC</option>
+    <option value="Switch">SWITCH</option>
+  </select>
+  <br>
+  <span id="lblConsole">Consola no seleccionada</span>
+
+</div>
+<br>
+<br>
+
+    <div class="ct-chart ct-perfect-fourth"></div>
+    <br>
+    
+    <table>
+      <thead>
+        <tr>
+          <!-- <th>TITLE</th>
+          <th>SCORE</th> -->
+          <!-- <th></th> -->
+        </tr>
+      </thead>
+      <tbody id="tableGames">
+
+
+      </tbody>  
+    </table>    
+
+    <!-- Site content goes here !-->
+    <script src="js/chartist.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
