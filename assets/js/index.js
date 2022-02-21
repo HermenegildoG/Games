@@ -40,7 +40,7 @@ function chooseConsole(){
           <br>
           <tr>
           <td colspan="2">
-            <img src="${item.UrlGame}"></img>
+            <img class="cover" src="${item.UrlGame}"></img>
             </td>
           </tr>
           `
