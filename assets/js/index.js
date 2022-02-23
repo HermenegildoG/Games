@@ -20,33 +20,29 @@ function chooseConsole(){
   let c=console.value;
   document.getElementById('lblConsole').innerText=`Selecciono ${c}`;
   fectchGamesScores(c);
+  returnGames(c);
+}
 
-  const xhttp = new XMLHttpRequest();
-  xhttp.open('Get', 'games.json',true);
-  xhttp.send();
-  xhttp.onreadystatechange= function(){
-    if(this.readyState==4 && this.status==200){
-      let jsonDataTable = JSON.parse(this.responseText);
-      let newjasonDataTable = jsonDataTable.filter(e => e.Platform == `${c}`);
-      let tableGames = document.querySelector('#tableGames');
-      tableGames.innerHTML='';
-      for(let item of newjasonDataTable){
-          tableGames.innerHTML+= 
-          `
-          <tr>
-            <td style='text-align:center'><b>GAME: </b> ${item.name}</td>
-            <td style='text-align:left'><b>Score: </b> ${item.Score}</td>
-          </tr>
-          <br>
-          <tr>
-          <td colspan="2">
-            <img class="cover" src="${item.UrlGame}"></img>
-            </td>
-          </tr>
-          `
-      }
-    }
-  }
+function returnGames(c){
+  fetch("/games.json")
+  .then((y) => y.json())
+  .then((datos) =>{
+    let newjasonDataTable = datos.filter(e => e.Platform == `${c}`);
+    //console.log(newjasonDataTable);
+    let tableGames = document.querySelector('#tableGames');
+    tableGames.innerHTML='';
+    for(let item of newjasonDataTable){
+              tableGames.innerHTML+= 
+              `
+              <tr>
+              <td class = "tdCover"><img class="cover" src="${item.UrlGame}"></img></td>
+              <td style='text-align:center' width="60%"><b>GAME: <br> </b> ${item.name}</td>
+              <td style='text-align:left'><h1><span class="blue">${item.Score}</span></h1></td>
+              </tr>
+              `
+          }
+  })
 }
 
 fectchGamesScores();
+

@@ -11,8 +11,9 @@
     
 <div class="Combobox">
 
-  <span>Selecciona el tipo de consola: </span>
+  <span class="label1">Selecciona el tipo de consola: </span>
   <select name="console" id="console" onchange="chooseConsole();">
+    <option value="" selected disabled>seleccione una plataforma</option>
     <option value="Xbox One">XBOX ONE</option>
     <option value="Xbox Series X">XBOX SERIES X</option>
     <option value="Playstation 5">PLAYSTATION 5</option>
@@ -21,7 +22,7 @@
     <option value="Switch">SWITCH</option>
   </select>
   <br>
-  <span id="lblConsole">Consola no seleccionada</span>
+  <span class="lblConsole" id="lblConsole">Consola no seleccionada</span>
 
 </div>
 <br>
@@ -30,17 +31,15 @@
     <div class="ct-chart ct-perfect-fourth"></div>
     <br>
     
-    <table>
+    <table class="designTable">
       <thead>
         <tr>
           <!-- <th>TITLE</th>
-          <th>SCORE</th> -->
-          <!-- <th></th> -->
+          <th>SCORE</th>
+          <th>> </th>  -->
         </tr>
       </thead>
       <tbody id="tableGames">
-
-
       </tbody>  
     </table>    
 
